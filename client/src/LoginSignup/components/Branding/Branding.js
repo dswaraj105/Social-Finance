@@ -17,7 +17,7 @@ export default function Branding() {
         finance
       </div>
       <div className={classes.desc2}>
-        Worlds First Social Media for Finnance
+        World largest and fastest growing community of finance
       </div>
     </div>
   );
