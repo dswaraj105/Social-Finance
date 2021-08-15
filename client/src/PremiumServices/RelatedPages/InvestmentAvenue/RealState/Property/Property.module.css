@@ -1,0 +1,38 @@
+.Property {
+  display: flex;
+  max-width: 800px;
+  margin: 10px;
+}
+
+.propertyImg {
+  width: 250px;
+  height: 250px;
+  padding: 0;
+}
+
+.content {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.area {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.price {
+  margin-left: 80px;
+}
+
+.price i {
+  font-size: 1rem;
+}
+
+.listingdesc {
+  width: 420px;
+  display: flex;
+  justify-content: space-between;
+}

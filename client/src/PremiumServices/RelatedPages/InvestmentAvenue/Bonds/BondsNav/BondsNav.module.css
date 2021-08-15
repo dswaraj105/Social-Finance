@@ -1,0 +1,14 @@
+.nav {
+  text-decoration: none;
+  color: rgb(48, 44, 44);
+}
+
+.activenav {
+  color: #2BAE66;
+  border-bottom: 1px solid #14683a;
+}
+
+.line {
+  margin-bottom: 20px;
+  padding: 0;
+}

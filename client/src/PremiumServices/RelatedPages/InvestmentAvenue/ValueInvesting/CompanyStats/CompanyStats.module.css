@@ -1,0 +1,36 @@
+.table1 {
+  width: 750px;
+}
+
+.company {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 10px auto 20px auto;
+  color: rgb(226, 9, 9);
+}
+
+.header {
+  width: 750px;
+  font-size: 1.5rem;
+  background-color: rgb(192, 186, 186);
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.subHeader {
+  width: 1108px;
+  font-size: 1.5rem;
+  background-color: rgb(192, 186, 186);
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.label {
+  width: 1108px;
+  background-color: rgb(192, 186, 186);
+  margin-bottom: 10px;
+}
+
+.labelitem {
+  border: 3px solid #000;
+}

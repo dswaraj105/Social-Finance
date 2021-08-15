@@ -1,0 +1,8 @@
+.People {
+  width: 650px;
+  margin: 5px auto;
+  padding: 5px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

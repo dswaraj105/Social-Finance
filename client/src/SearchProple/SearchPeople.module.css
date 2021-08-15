@@ -1,0 +1,23 @@
+.centre {
+  width: 550px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.searchForm {
+  width: 100%;
+}
+
+.searchInput {
+  width: 400px;
+}
+
+.searchBtn {
+  font-size: 3rem;
+  color: #2BAE66;
+  margin-left: 30px;
+}
+
+.people {
+  margin-top: 20px;
+}

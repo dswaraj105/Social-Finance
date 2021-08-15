@@ -1,0 +1,23 @@
+.container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #2BAE66;
+  width: 250px;
+}
+
+.label {
+  margin: 5px;
+  text-align: center;
+  color: aliceblue;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

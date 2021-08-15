@@ -1,0 +1,9 @@
+.heading {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.container {
+  padding: 20px;
+  border: 2px solid #2BAE66;
+}

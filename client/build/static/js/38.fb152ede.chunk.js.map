@@ -1,0 +1,1 @@
+{"version":3,"sources":["PremiumServices/RelatedPages/InvestmentAvenue/Trading/Trading.js"],"names":["Trading"],"mappings":"iHAIeA,UAJC,WACd,OAAO","file":"static/js/38.fb152ede.chunk.js","sourcesContent":["const Trading = () => {\r\n  return <p>Trading comming soon</p>;\r\n};\r\n\r\nexport default Trading;\r\n"],"sourceRoot":""}

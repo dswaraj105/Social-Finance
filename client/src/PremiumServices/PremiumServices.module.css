@@ -1,0 +1,19 @@
+.container {
+    margin-top: 30px;
+}
+
+.topicHeading {
+    min-height: 130px;
+    color: #2bae66;
+}
+
+.content {
+    color: black;
+    min-height: 250px;
+}
+
+@media (max-width:960px) {
+    .topicHeading{
+        min-height: 50px;
+    }
+}

@@ -1,0 +1,27 @@
+.Signup {
+  background-color: rgb(136, 123, 123);
+  width: 500px;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.card {
+  padding-left: 50px;
+}
+
+.input {
+  width: 80%;
+}
+
+.btnsContainer {
+  margin-top: 10px;
+}
+
+.errorDiv {
+  width: 450px;
+  margin: 100px auto 20px auto;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.3rem;
+  border: 2px solid #a7100b;
+}
