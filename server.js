@@ -46,6 +46,7 @@ const fileFilter = (req, file, cb) => {
 
 // Setting up various parsers to parse the request'
 app.use(express.static(path.join(__dirname, "client/build")));
+app.use(express.static(path.join(__dirname, "client/pdf")));
 // app.use('/images', express.static(path.join(__dirname, "images")));
 app.use('/images',express.static('images'));
 // app.use(express.urlencoded({ extended: false }));
@@ -73,16 +74,18 @@ app.use(commentRoutes);
 app.use(profileRoutes);
 app.use(statsRoutes);
 
+app.get('/getreport', (req,res,next) => {
+  console.log('Sending pdf');
+  res.end();
+})
+
 app.get("*", (req, res, next) => {
   res.sendFile(__dirname,"./index.html");
 });
 
-// if(process.env.NODE_ENV === "production"){
-//   app.use(app.static('client/build'));
-// }
-
 if(process.env.NODE_ENV === "production"){
   app.use(express.static('client/build'));
+  app.use(express.static('client/pdf'));
 }
 
 app.listen(PORT, () => {

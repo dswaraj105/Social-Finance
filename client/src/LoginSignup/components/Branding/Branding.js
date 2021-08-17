@@ -13,7 +13,7 @@ export default function Branding() {
         <div className={classes.tagline}>Yay Paiso Ki Baat Hai</div>
       </div>
       <div className={classes.desc1}>
-        Join and be a part of worlds largestanf fastest growing community of
+        Join and be a part of worlds largest and fastest growing community of
         finance
       </div>
       <div className={classes.desc2}>
