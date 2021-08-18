@@ -34,9 +34,9 @@ const ForeignMarketExchange = React.lazy(() =>
 const Crypto = React.lazy(() => import("./Cources/CryptoCurrency"));
 
 const COURCES = [
-  "Finincial Empowerment",
-  "Finincail Intelegence & Finincial IQ",
-  "Finincial Letreacy",
+  "Financial Empowerment",
+  "Financail Intelligence & Finincial IQ",
+  "Financial Leteracy",
   "Asset And Investment Avenue",
   "Stock Market",
   "Trading",
@@ -66,10 +66,10 @@ const FinanceCources = () => {
       <Switch>
         <Route path="/service/cources" exact>
           <Typography variant="h3">
-            Get Finincally Educated With Paisaat
+            Get Financally Educated With Paisaat
           </Typography>
           <Typography variant="body1">
-            We present you a step by step guide to you to be finincally
+            We present you a step by step guide to you to be financally
             empowered.
           </Typography>
           <CourcesTitle cources={COURCES} courseClicked={startCourseHandler} />
