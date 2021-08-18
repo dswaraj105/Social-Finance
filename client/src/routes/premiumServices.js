@@ -55,6 +55,10 @@ const FinincialCources = React.lazy(() =>
   import("../PremiumServices/RelatedPages/FinanceCources/FinanceCources")
 );
 
+const Portfolio = React.lazy(() =>
+  import("../PremiumServices/RelatedPages/Portfolio/Portfolio")
+);
+
 const PremiumServices = () => {
   return (
     <Fragment>
@@ -90,6 +94,9 @@ const PremiumServices = () => {
       </Route>
       <Route path="/service/cources">
         <FinincialCources />
+      </Route>
+      <Route path="/service/portfolio">
+        <Portfolio />
       </Route>
     </Fragment>
   );
