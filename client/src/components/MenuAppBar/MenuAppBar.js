@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link, useHistory, NavLink } from "react-router-dom";
 
-import { fade, makeStyles } from "@material-ui/core/styles";
+// import { fade, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
@@ -9,10 +10,10 @@ import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import MenuIcon from "@material-ui/icons/Menu";
+import PinterestIcon from '@material-ui/icons/Pinterest';
 import SearchIcon from "@material-ui/icons/Search";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import MoreIcon from "@material-ui/icons/MoreVert";
+import MenuIcon from '@material-ui/icons/Menu';
 
 import UserState from "../../store/user-state";
 import Navlink from "./NavLink/Navlink";
@@ -34,10 +35,11 @@ const useStyles = makeStyles((theme) => ({
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
+    // backgroundColor: fade(theme.palette.common.white, 0.15),
+    // "&:hover": {
+    //   backgroundColor: fade(theme.palette.common.white, 0.25),
+    // },
+    backgroundColor: "rgba(255,255,255,0.2)",
     marginRight: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
@@ -150,6 +152,9 @@ export default function PrimarySearchAppBar() {
         <Navlink link="/app/premium"> Premium Services </Navlink>
       </MenuItem>
       <MenuItem style={{ backgroundColor: "#2BAE66" }}>
+        <Navlink link="/app/trending"> Trending </Navlink>
+      </MenuItem>
+      <MenuItem style={{ backgroundColor: "#2BAE66" }}>
         <Navlink link="/app/about"> About Us </Navlink>
       </MenuItem>
       <MenuItem
@@ -196,7 +201,12 @@ export default function PrimarySearchAppBar() {
             color="inherit"
             aria-label="open drawer"
           >
-            <MenuIcon />
+            <Link
+              to="/app/home"
+              style={{ color: "#fff", textDecoration: "none" }}
+            >
+            <PinterestIcon />
+            </Link>
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             <Link
@@ -251,7 +261,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon />
+              <MenuIcon />
             </IconButton>
           </div>
         </Toolbar>

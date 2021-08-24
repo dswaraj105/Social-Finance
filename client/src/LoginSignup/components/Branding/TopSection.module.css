@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
+.Branding {
+  margin-top: 20px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+
+.top {
+  width: 100%;
+  align-items: center;
+}
+
+.LogoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  right: 100px;
+  color: #2BAE66;
+  top: 30px;
+}
+
+.tagline {
+  color: #2BAE66;
+  position: absolute;
+  font-size: 1.4rem;
+  font-family: 'Caveat', cursive;
+  right: 0;
+  top: 100px;
+}
+
+
+@media (max-width: 600px) {
+  .Branding{
+    padding-left: 0;
+  }
+}

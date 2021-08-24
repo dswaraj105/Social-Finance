@@ -101,7 +101,7 @@
   },
   {
     "name": "Aditya Birla Sun Life Corporate Fund",
-    "risk": "Noderate Risk",
+    "risk": "Moderate Risk",
     "stars": "5",
     "mode": "Debt",
     "1day": "0.03",
@@ -111,7 +111,7 @@
   },
   {
     "name": "ICICI Purdential Short Term Fund Direct Plan Growth",
-    "risk": "Noderate Risk",
+    "risk": "Moderate Risk",
     "stars": "5",
     "mode": "Debt",
     "1day": "0.03",
@@ -121,7 +121,7 @@
   },
   {
     "name": "Axis Short Term Direct Fund Growth",
-    "risk": "Noderate Risk",
+    "risk": "Moderate Risk",
     "stars": "5",
     "mode": "Debt",
     "1day": "0.03",
@@ -131,7 +131,7 @@
   },
   {
     "name": "HDFC Debt Fund Direct Plan Growth",
-    "risk": "Noderate Risk",
+    "risk": "Moderate Risk",
     "stars": "5",
     "mode": "Debt",
     "1day": "0.01",
@@ -141,7 +141,7 @@
   },
   {
     "name": "Nippon India Money Direct Fund Growth",
-    "risk": "Noderate Risk",
+    "risk": "Moderate Risk",
     "stars": "3",
     "mode": "Debt",
     "1day": "0.01",

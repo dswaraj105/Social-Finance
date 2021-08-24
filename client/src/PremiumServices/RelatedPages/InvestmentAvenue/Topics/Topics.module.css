@@ -7,3 +7,16 @@
   padding: 20px;
   border: 2px solid #2BAE66;
 }
+
+@media (max-width: 600px) {
+  .heading{
+    font-size: 2rem;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    border-bottom: 2px solid #2BAE66;
+  }
+
+  .container{
+    border: 0;
+  }
+}

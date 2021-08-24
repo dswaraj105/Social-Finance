@@ -6,13 +6,18 @@
   box-sizing: border-box;
 }
 
-/* .topSection {
-
-} */
-
 .bottomsection {
   margin-left: 20px;
   display: flex;
   flex-wrap:wrap;
 }
 
+@media (max-width: 600px) {
+  .bottomsection{
+    margin-left: 0;
+  }
+
+  .topSection {
+    margin-top: 180px;
+  }
+}

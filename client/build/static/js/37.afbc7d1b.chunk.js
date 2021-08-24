@@ -1,0 +1,2 @@
+(this.webpackJsonpdemo=this.webpackJsonpdemo||[]).push([[37],{319:function(n,e,o){"use strict";o.r(e);var s=o(1);e.default=function(){return Object(s.jsx)("p",{children:"Trading comming soon"})}}}]);
+//# sourceMappingURL=37.afbc7d1b.chunk.js.map

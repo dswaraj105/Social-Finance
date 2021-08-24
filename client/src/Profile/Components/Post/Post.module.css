@@ -6,3 +6,10 @@
 .red {
   color: rgb(38, 175, 25);
 }
+
+@media screen and (max-width: 600px) {
+  .postImage{
+    width: 100%;
+    height: inherit;
+  }
+}

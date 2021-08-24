@@ -4,15 +4,18 @@
 import Login from "./containers/Login/Login";
 import Signup from "./containers/Signup/Signup";
 import Branding from "./components/Branding/Branding";
-// import UserState from '../store/user-state';
+import TopSection from "./components/Branding/TopSection";
 import classes from "./LoginSignup.module.css";
 
 import Container from "@material-ui/core/Container";
+import { Hidden } from "@material-ui/core";
 
 const LoginSignup = () => {
-
   return (
     <div className={classes.LoginSignup}>
+      <Hidden smUp>
+        <TopSection />
+      </Hidden>
       <br />
       <Container>
         <div className={classes.topSection}>
@@ -28,4 +31,3 @@ const LoginSignup = () => {
 };
 
 export default LoginSignup;
-

@@ -17,3 +17,14 @@
   background-color: #0e4426;
   color: aliceblue;
 }
+
+@media (max-width:600px) {
+  .topicHeading{
+      min-height: 50px;
+  }
+
+  .content{
+    min-height: auto;
+    margin-bottom: 20px;
+  }
+}

@@ -45,3 +45,15 @@
   width: 80%;
   text-align: left;
 }
+
+@media (max-width: 600px) {
+  .desc1{
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+  .desc2{
+    font-size: 1.2rem;
+    margin-bottom: 100px;
+  }
+}

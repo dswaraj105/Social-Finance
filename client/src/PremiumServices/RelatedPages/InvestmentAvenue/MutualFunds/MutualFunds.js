@@ -52,7 +52,7 @@ const ValueInvesting = () => {
       <Typography className={cssClasses.header} variant="h4">
         Mutual Funds
       </Typography>
-      <Nav type={type} changed={onChangemode} />
+      <Nav type={type} changed={onChangemode} selectedItem={type} />
       {displayDataRows}
     </Container>
   );
