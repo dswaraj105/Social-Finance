@@ -10,7 +10,7 @@ import { Hidden } from "@material-ui/core";
 import NavBtn from "./NavBtn/NavBtn";
 import cssClasses from "./Nav.module.css";
 
-const Converter = {
+const CONVERTER = {
   'highreturns': "High Returns",
   "taxsaving": "Tax Saving",
   "betterthanfd": "Better Than FD",
@@ -52,7 +52,7 @@ const BondsNav = (props) => {
             aria-haspopup="true"
             onClick={handleClick}
           >
-            {Converter[props.selectedItem]}
+            {CONVERTER[props.selectedItem]}
           </Button>
           <Menu
             id="simple-menu"

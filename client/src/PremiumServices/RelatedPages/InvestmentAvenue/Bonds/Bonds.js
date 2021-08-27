@@ -56,7 +56,7 @@ const Bonds = () => {
       <Typography className={cssClasses.heading} variant="h5">
         Bonds
       </Typography>
-      <BondsNav changed={changeBondType} type={bondType} />
+      <BondsNav changed={changeBondType} type={bondType} selectedItem={bondType} />
       {displayBonds}
     </Container>
   );

@@ -7,7 +7,7 @@
     "area": "1485",
     "price": "75 Lacs",
     "rate": "5050.51",
-    "imageurl": "",
+    "imageurl": "sale1",
     "status": "Quater 2, 2017",
     "listedon": "13 Feb, 2021",
     "listedby": "Gayasuddin Khan"
@@ -20,7 +20,7 @@
     "area": "1575",
     "price": "85 Lacs",
     "rate": "5396.83",
-    "imageurl": "",
+    "imageurl": "sale2",
     "status": "Quater 3, 2017",
     "listedon": "10 Dec 20",
     "listedby": "Issh Khurana"
@@ -29,11 +29,11 @@
     "type": "residential",
     "mode": "sale",
     "title": "Residential Plot for sale in Ramprastha City Plots Sector 9",
-    "location": " Sector 92 Pataudi Road Gurgaon",
+    "location": "Sector 92 Pataudi Road Gurgaon",
     "area": "350",
     "price": "1.40 Cr",
     "rate": "40,000",
-    "imageurl": "",
+    "imageurl": "sale3",
     "status": "Quater 4, 2020",
     "listedon": "18 Nov 20",
     "listedby": "Anil Gupta"
@@ -46,7 +46,7 @@
     "area": "2103",
     "price": "1.60 Cr",
     "rate": "7608.18",
-    "imageurl": "",
+    "imageurl": "sale4",
     "status": "Quater 3, 2019",
     "listedon": "27 Sept 20",
     "listedby": "Raja"
@@ -59,7 +59,7 @@
     "area": "1099",
     "price": "77 Lacs",
     "rate": "7006.37",
-    "imageurl": "",
+    "imageurl": "sale5",
     "status": "Quater 1, 2023",
     "listedon": "27 Sept 20",
     "listedby": "Raja"
@@ -72,7 +72,7 @@
     "area": "1983",
     "price": "75,000",
     "rate": "",
-    "imageurl": "",
+    "imageurl": "rent1",
     "status": "Semi Furnished",
     "listedon": "05 Jun 20",
     "listedby": "Aushotosh Kashyap"
@@ -85,7 +85,7 @@
     "area": "3250",
     "price": "75000",
     "rate": "",
-    "imageurl": "",
+    "imageurl": "rent2",
     "status": "Bare Shell",
     "listedon": "05 Jun 2020",
     "listedby": "Avinash Kashyap"
@@ -98,7 +98,7 @@
     "area": "3203",
     "price": "1 Lac",
     "rate": "",
-    "imageurl": "",
+    "imageurl": "rent3",
     "status": "Semi Furnished",
     "listedon": "03 Dec 19",
     "listedby": "Sunny"
@@ -111,7 +111,7 @@
     "area": "2791",
     "price": "55,000",
     "rate": "",
-    "imageurl": "",
+    "imageurl": "rent4",
     "status": "Semi Furnished",
     "listedon": "03 Dec 19",
     "listedby": "Sunny"
@@ -124,7 +124,7 @@
     "area": "1846",
     "price": "25000",
     "rate": "",
-    "imageurl": "",
+    "imageurl": "rent5",
     "status": "Semi Furnished",
     "listedon": "01 Sept 19",
     "listedby": "Mangla"

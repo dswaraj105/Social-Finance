@@ -6,6 +6,51 @@ import Nav from "./Nav/Nav";
 import Property from "./Property/Property";
 import cssClasses from "./RealState.module.css";
 
+// Importing all images
+import sale1 from './images/sale1.png';
+import sale2 from './images/sale2.png';
+import sale3 from './images/sale3.png';
+import sale4 from './images/sale4.png';
+import sale5 from './images/sale5.png';
+import rent1 from './images/rent1.png';
+import rent2 from './images/rent2.png';
+import rent3 from './images/rent3.png';
+import rent4 from './images/rent4.png';
+import rent5 from './images/rent5.png';
+import csale1 from './images/csale1.png';
+import csale2 from './images/csale2.png';
+import csale3 from './images/csale3.png';
+import csale4 from './images/csale4.png';
+import csale5 from './images/csale5.png';
+import crent1 from './images/crent1.png';
+import crent2 from './images/crent2.png';
+import crent3 from './images/crent3.png';
+import crent4 from './images/crent4.png';
+import crent5 from './images/crent5.png';
+
+const imagesObj = {
+  sale1,
+  sale2,
+  sale3,
+  sale4,
+  sale5,
+  rent1,
+  rent2,
+  rent3,
+  rent4,
+  rent5,
+  csale1,
+  csale2,
+  csale3,
+  csale4,
+  csale5,
+  crent1,
+  crent2,
+  crent3,
+  crent4,
+  crent5
+}
+
 const ValueInvesting = () => {
   const [propertyType, setPropertyType] = useState("residential");
   const [mode, setMode] = useState("sale");
@@ -22,7 +67,6 @@ const ValueInvesting = () => {
         );
         // console.log(newp);
         setmodeProperties(newp);
-        console.log(res);
       })
       .catch((err) => {
         console.log(err);
@@ -60,12 +104,13 @@ const ValueInvesting = () => {
         title={property.title}
         location={property.location}
         area={property.area}
-        img={property.imageurl}
+        // img={property.imageurl}
         listedby={property.listedby}
         listedon={property.listedon}
         price={property.price}
         rate={property.rate}
         status={property.status}
+        img={imagesObj[property.imageurl]}
       />
     );
   });

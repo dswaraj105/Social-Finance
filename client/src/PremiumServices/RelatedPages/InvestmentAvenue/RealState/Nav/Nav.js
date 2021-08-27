@@ -46,7 +46,7 @@ const BondsNav = (props) => {
           onClick={props.modeChange.bind(null, "sale")}
           className={cssClasses.navbtn}
         >
-          Sale{" "}
+          Sale
         </Button>
         <Button
           style={
@@ -57,7 +57,7 @@ const BondsNav = (props) => {
         >
           Rent
         </Button>
-        <Button
+        {/* <Button
           style={
             props.mode === "pg" ? { borderBottom: "4px solid #2BAE66" } : {}
           }
@@ -65,7 +65,7 @@ const BondsNav = (props) => {
           className={cssClasses.navbtn}
         >
           PG
-        </Button>
+        </Button> */}
       </div>
       <Divider className={cssClasses.line} />
     </>

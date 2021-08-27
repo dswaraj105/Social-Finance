@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";  
+import { Link } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
@@ -15,7 +15,7 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import { red } from "@material-ui/core/colors";
 // import FavoriteIcon from "@material-ui/icons/Favorite";
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ThumbUpIcon from "@material-ui/icons/ThumbUp";
 import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 
 import UserState from "../../../store/user-state";
@@ -138,27 +138,31 @@ export default function Post(props) {
     }
   };
 
-  
+  const textLinesArr = props.text.split("\n");
 
   return (
     <Paper elevation={3}>
-      
       <Card className={classes.root}>
-        <Link to={`/app/peoplesprofile/${props.postUserId}`} style={{textDecoration: 'none'}}>
-        <CardHeader
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              {props.owner[0]}
-            </Avatar>
-          }
-          title={props.owner}
-          subheader={date}
-        />
+        <Link
+          to={`/app/peoplesprofile/${props.postUserId}`}
+          style={{ textDecoration: "none" }}
+        >
+          <CardHeader
+            avatar={
+              <Avatar aria-label="recipe" className={classes.avatar}>
+                {props.owner[0]}
+              </Avatar>
+            }
+            title={props.owner}
+            subheader={date}
+          />
         </Link>
         <CardContent>
-          <Typography variant="body2" component="p">
-            {props.text}
-          </Typography>
+          {textLinesArr.map((textline, i) => (
+            <Typography key={i} variant="body2" component="p">
+              {textline}
+            </Typography>
+          ))}
           {displayTopics}
         </CardContent>
         {props.imgUrl && (
