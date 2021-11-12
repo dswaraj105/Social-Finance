@@ -13,7 +13,6 @@ const Posts = () => {
   useEffect(() => {
     let userId = localStorage.getItem("userID");
 
-    console.log(userId);
     fetch(`/usersAllPost/${userId}`)
       .then((res) => res.json())
       .then((res) => {

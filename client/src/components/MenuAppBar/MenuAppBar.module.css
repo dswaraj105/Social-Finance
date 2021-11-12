@@ -6,3 +6,15 @@
     padding-left: 50px;
     padding-right: 50px;
 }
+
+.logoImg {
+    height: 45px;
+    position: absolute;
+    border-radius: 8px;
+}
+
+.navitem {
+    padding: 0;
+    margin: 0;
+    transform: translateY(-5px);
+}

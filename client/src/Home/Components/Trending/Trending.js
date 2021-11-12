@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const paper = {
-    color: '#2BAE66'
+    color: '#086cdf'
   };
 
 const trends = ["#Paisaat", "#CryptoCurrency", "#Share market"];
@@ -28,7 +28,7 @@ const Trending = () => {
 
   const trendingList = trends.map((trend, index) => {
     return (
-      <ListItem button key={index}>
+      <ListItem button key={index}> 
         <ListItemText primary={trend} />
       </ListItem>
     );
@@ -39,7 +39,7 @@ const Trending = () => {
       <h3>Trending</h3>
       {trendingList}
       <Link to="/app/trending">
-        <h4 style={{ color: "#2BAE66" }}>See more...</h4>
+        <h4 style={{ color: "#086cdf" }}>See more...</h4>
       </Link>
     </Paper>
   );

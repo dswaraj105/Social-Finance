@@ -52,11 +52,27 @@ export default function SimpleAccordion() {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <Accordion style={about}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel2a-content"
+          id="panel2a-header"
+        >
+          <Typography className={classes.heading}>Our Vision.</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Our vision is to financially empower people and spread financial
+            wisdom among the general masses for the empowerment of individuals
+            while at the same time creating a global community of finance.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
     </Container>
   );
 }
 const about = {
   color: "white",
-  backgroundColor: "#2BAE66",
+  backgroundColor: "#4280c7",
   border: "1px solid white",
 };

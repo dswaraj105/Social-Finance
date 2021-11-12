@@ -6,7 +6,7 @@ import classes from './Navlink.module.css';
 
 const Navlink = (props) => {
     return (
-        <IconButton color="inherit">
+        <IconButton style={{marginBottom: "9px"}} color="inherit">
           <Badge color="secondary">
             <NavLink to={props.link} className={classes.link} > {props.children} </NavLink>
           </Badge>

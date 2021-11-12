@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";  
 
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
@@ -145,7 +144,6 @@ export default function RecipeReviewCard(props) {
   return (
     <Paper className={classes.root} style={{margin: "auto"}} elevation={3}>
       <Card className={classes.root}>
-      <Link to={`/app/peoplesprofile/${props.postUserId}`} style={{textDecoration: 'none'}}>
         <CardHeader
           avatar={
             <Avatar aria-label="recipe" className={classes.avatar}>
@@ -155,7 +153,6 @@ export default function RecipeReviewCard(props) {
           title={props.owner}
           subheader={date}
         />
-        </Link>
         <CardContent>
           <Typography variant="body2" component="p">
             {props.text}

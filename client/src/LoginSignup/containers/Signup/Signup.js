@@ -148,11 +148,8 @@ export default function Signup() {
       <Paper style={styles} elevation={3} className={classes.Signup}>
         <Card className={classes.card} style={{backgroundColor: '#2BAE66', boxShadow: '3px 3px 2px 3px #888'}}>
           <CardContent>
-          <Typography variant="h5" color="textSecondary" gutterBottom>
-              Don't have an account Yet? 
-            </Typography>
-            <Typography variant="h6" color="textSecondary" gutterBottom>
-              Connect With us!
+            <Typography varient="h3" color="textSecondary" gutterBottom>
+              Create An Account
             </Typography>
 
             <form noValidate autoComplete="off" onSubmit={submitFormHandler}>
@@ -210,7 +207,7 @@ export default function Signup() {
                         inputProps={{ "aria-label": "primary checkbox" }}
                       />
                     }
-                    label="I agree to all of terms of use"
+                    label="I agree to all of terms of use and PRI"
                     labelPlacement="end"
                   />
                 </FormGroup>

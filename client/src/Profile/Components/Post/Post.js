@@ -169,7 +169,7 @@ export default function Post(props) {
         <CardActions disableSpacing>
           <IconButton onClick={likePostHandler} aria-label="add to favorites">
             <ThumbUpIcon className={likedClasses} />
-          </IconButton>{" "}
+          </IconButton>
           &nbsp; {likesCount} Likes
           <IconButton
             className={clsx(classes.expand, {

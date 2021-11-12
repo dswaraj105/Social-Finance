@@ -95,7 +95,7 @@ const CreatePost = () => {
     <React.Fragment>
       <Paper
         elevation={3}
-        style={{ backgroundColor: "#2BAE66" }}
+        style={{ backgroundColor: "#4280c7" }}
         className={cssClasses.card}
       >
         <Typography variant="h5" gutterBottom className={cssClasses.header}>

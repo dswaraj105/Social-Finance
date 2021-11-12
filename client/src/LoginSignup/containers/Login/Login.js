@@ -52,6 +52,7 @@ export default function Login() {
       })
         .then((res) => res.json())
         .then((res) => {
+          console.log("Got response");
           if (res._id) {
             userCTX.onLogin(res);
             localStorage.setItem("username", res.name);
@@ -60,6 +61,7 @@ export default function Login() {
             history.push("/app/home");
           }
           if (res.msg) {
+            console.log("Directing to login for", res.msg);
             history.replace(`/loginsignup/login/${res.msg}`);
           }
         })
@@ -72,7 +74,7 @@ export default function Login() {
       return;
     }
 
-    console.log("Something went wrong in user fields or server not working");
+    console.log("Something went wrong");
   };
 
   let errorsDisplay;

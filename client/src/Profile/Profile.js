@@ -54,7 +54,7 @@ export default function Profile() {
               height: "50%",
               width: "50%",
               margin: "1%",
-              border: "2px solid #2BAE66",
+              border: "2px solid #086cdf",
               borderRadius: "20px",
             }}
             src={jerry}
@@ -67,7 +67,7 @@ export default function Profile() {
                 <Paper
                   className={classes.paper}
                   style={{
-                    color: "#2BAE66",
+                    color: "#086cdf",
                     fontSize: "1rem",
                     backgroundColor: "#FCF6F5",
                   }}
@@ -79,7 +79,7 @@ export default function Profile() {
                 <Paper
                   className={classes.paper}
                   style={{
-                    color: "#2BAE66",
+                    color: "#086cdf",
                     fontSize: "1rem",
                     backgroundColor: "#FCF6F5",
                   }}
@@ -112,7 +112,7 @@ export default function Profile() {
   );
 }
 const prof = {
-  border: "1px solid #2BAE66",
+  border: "1px solid #086cdf",
   backgroundColor: "#FCF6F5",
-  color: "#2BAE66",
+  color: "#086cdf",
 };

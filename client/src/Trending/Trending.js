@@ -1,7 +1,7 @@
 import Typography from "@material-ui/core/Typography";
 
 import Posts from "./Containers/Posts/Posts";
-import BestCreators from "./Components/PeopleToFollow/BestCreators";
+import StarProfiles from "../components/StarProfiles/StarProfiles";
 import { Container, Grid } from "@material-ui/core";
 
 const Trending = () => {
@@ -9,11 +9,11 @@ const Trending = () => {
     <Container>
       <Typography
         variant="h3"
-        style={{ color: "#2BAE66", textAlign: "center" }}
+        style={{ color: "#086cdf", textAlign: "center" }}
         component="h1"
         gutterBottom
       >
-        Trending Posts
+        Trending
       </Typography>
       <Grid container spacing={4}>
         <Grid item md={3}></Grid>
@@ -21,7 +21,7 @@ const Trending = () => {
           <Posts />
         </Grid>
         <Grid item sm={3}>
-          <BestCreators />
+          <StarProfiles />
         </Grid>
       </Grid>
     </Container>

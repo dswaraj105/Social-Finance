@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 
 import Post from "../../Components/Post/Post";
 import userState from "../../../store/user-state";
+// import { Button } from "@material-ui/core";
 
 const Posts = () => {
   const userCTX = useContext(userState);
@@ -56,13 +57,16 @@ const Posts = () => {
             padding: "5px 10px",
             color: "#2BAE66",
             fontWeight: 500,
-            fontSize: '1.4rem'
+            fontSize: "1.4rem",
           }}
         >
           Suggested Posts
         </div>
       )}
       {displayPosts}
+      {/* <Button onClick={fetchMoreposts} variant="outlined" color="primary" style={{ width: "100%" }}>
+        Show More
+      </Button> */}
     </div>
   );
 };

@@ -4,11 +4,12 @@ import { Route } from "react-router-dom";
 import Home from "../pages/Home";
 
 const Profile = React.lazy(() => import("../pages/Profile"));
-const PremiumServices = React.lazy(() => import("../pages/PremiumServices"));
 const About = React.lazy(() => import("../pages/About"));
 const SearchProple = React.lazy(() => import("../pages/SearchPeople"));
 const Trending = React.lazy(() => import("../pages/Trending"));
 const PeoplesProfile = React.lazy(() => import("../PeoplesProfile/PeoplesProfile"));
+const Courses = React.lazy(() => import("../Cources/Courses"));
+const Settings = React.lazy(() => import("../pages/Settings"));
 
 const MainRoutes = () => {
   return (
@@ -22,8 +23,8 @@ const MainRoutes = () => {
       <Route path="/app/peoplesprofile/:userid">
         <PeoplesProfile />
       </Route>
-      <Route path="/app/premium">
-        <PremiumServices />
+      <Route path="/app/courses">
+        <Courses />
       </Route>
       <Route path="/app/about">
         <About />
@@ -33,6 +34,9 @@ const MainRoutes = () => {
       </Route>
       <Route path="/app/trending">
         <Trending />
+      </Route>
+      <Route path="/app/settings">
+        <Settings />
       </Route>
     </Fragment>
   );
