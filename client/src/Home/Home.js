@@ -23,7 +23,7 @@ export default function Home() {
           </Grid>
         </Hidden>
 
-        <Grid item sm={12} md={6}>
+        <Grid item sm={12} md={6} style={{width: '95%'}}>
           <Grid item xs={12} container justify="center">
             <ShareSomething />
           </Grid>
