@@ -22,8 +22,7 @@ export default function Home() {
             <PeopleToFollow />
           </Grid>
         </Hidden>
-
-        <Grid item sm={12} md={6} style={{width: '95%'}}>
+        <Grid item sm={12} md={6} style={{width: '100%'}} >
           <Grid item xs={12} container justify="center">
             <ShareSomething />
           </Grid>

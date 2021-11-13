@@ -24,7 +24,7 @@ import cssClasss from "./Post.module.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 650,
+    maxWidth: 600,
     marginBottom: 15,
   },
   media: {
