@@ -15,7 +15,7 @@ const Dictonary = () => {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(word);
+    // console.log(word);
   }
 
   return (

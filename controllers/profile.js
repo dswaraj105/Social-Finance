@@ -44,7 +44,7 @@ exports.getUsersAllPosts = async (req, res, next) => {
       .populate({ path: "postedBy", select: ["name", "imageUrl"] });
 
       // Sending a success response
-      console.log(posts);
+      // console.log(posts);
       res.status(201).json(posts);
 
   } catch (err) {

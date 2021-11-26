@@ -138,14 +138,8 @@ export default function MenuBar() {
         <Navlink link="/app/courses"> Courses </Navlink>
       </MenuItem>
       <MenuItem style={{ backgroundColor: "#E5E5E5" }}>
-        <Navlink link="/app/about"> Contact Us </Navlink>
+        <Navlink link="/app/about"> About Us </Navlink>
       </MenuItem>
-      {/* <MenuItem style={{ backgroundColor: "#E5E5E5" }}>
-        <Navlink link="/signup"> Signin </Navlink>
-      </MenuItem>
-      <MenuItem style={{ backgroundColor: "#E5E5E5" }}>
-        <Navlink link="/signup"> Signup </Navlink>
-      </MenuItem> */}
     </Menu>
   );
 
@@ -170,7 +164,7 @@ export default function MenuBar() {
             <Navlink link="/signin">Home</Navlink>
             <Navlink link="#">About Us</Navlink>
             <Navlink link="/app/courses">Courses</Navlink>
-            <Navlink link="/app/about">Contact Us</Navlink>
+            <Navlink link="/app/about">About Us</Navlink>
             <Navlink link="/signin">Signin</Navlink>
             <Navlink link="/signup">
               <button className={cssClasses.signupbtn}>Signup</button>

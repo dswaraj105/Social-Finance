@@ -15,6 +15,9 @@ const UserStateProvider = (props) => {
   const logoutHandler = () => {
     setIsAuthenticated(false);
     setUserData(null);
+
+    document.cookie = "";
+    localStorage.clear();
   };
 
   return (

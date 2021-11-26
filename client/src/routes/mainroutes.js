@@ -1,24 +1,31 @@
-import React, { Fragment } from "react";
-import { Route } from "react-router-dom";
+import React, { Fragment, useContext } from "react";
+import { Route, Redirect } from "react-router-dom";
 
 import Home from "../pages/Home";
+import userState from "../store/user-state";
 
 const Profile = React.lazy(() => import("../pages/Profile"));
 const About = React.lazy(() => import("../pages/About"));
 const SearchProple = React.lazy(() => import("../pages/SearchPeople"));
 const Trending = React.lazy(() => import("../pages/Trending"));
-const PeoplesProfile = React.lazy(() => import("../PeoplesProfile/PeoplesProfile"));
+const PeoplesProfile = React.lazy(() =>
+  import("../PeoplesProfile/PeoplesProfile")
+);
 const Courses = React.lazy(() => import("../Cources/Courses"));
 const Settings = React.lazy(() => import("../pages/Settings"));
 
 const MainRoutes = () => {
+  let userCTX = useContext(userState);
+  console.log("main routes -- isloggedin - ", userCTX.isAuthenticated);
+  const isloggedin = userCTX.isAuthenticated;
+
   return (
     <Fragment>
       <Route path="/app/home">
-        <Home />
+        {isloggedin ? <Home /> : <Redirect to="/signin" />}
       </Route>
       <Route path="/app/profile">
-        <Profile />
+        {isloggedin ? <Profile /> : <Redirect to="/signin" />}
       </Route>
       <Route path="/app/peoplesprofile/:userid">
         <PeoplesProfile />
@@ -35,9 +42,13 @@ const MainRoutes = () => {
       <Route path="/app/trending">
         <Trending />
       </Route>
-      <Route path="/app/settings">
-        <Settings />
-      </Route>
+      {isloggedin ? (
+        <Route path="/app/settings">
+          <Settings />
+        </Route>
+      ) : (
+        ""
+      )}
     </Fragment>
   );
 };

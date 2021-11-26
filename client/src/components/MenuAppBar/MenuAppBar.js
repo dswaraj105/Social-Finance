@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 
 import { fade, makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -87,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
 export default function PrimarySearchAppBar() {
   const userCTX = useContext(UserState);
 
+  const history = useHistory();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -111,7 +112,13 @@ export default function PrimarySearchAppBar() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  const logoutHandler = () => {
+    userCTX.onLogout();
+    history.replace("/");
+  };
+
   let userName;
+  let isAuthenticated = userCTX.isAuthenticated;
 
   if (userCTX.user) {
     if (userCTX.user.name) {
@@ -150,10 +157,11 @@ export default function PrimarySearchAppBar() {
         </NavLink>
       </MenuItem>
       <Divider style={{ height: "2px" }} />
-      <MenuItem onClick={handleMenuClose}>
-        <NavLink to="/" style={{ textDecoration: "none" }}>
+      <MenuItem onClick={logoutHandler}>
+        {/* <NavLink to="/" style={{ textDecoration: "none" }}>
           Logout
-        </NavLink>
+        </NavLink> */}
+        Logout
       </MenuItem>
     </Menu>
   );
@@ -169,38 +177,33 @@ export default function PrimarySearchAppBar() {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem style={{ backgroundColor: "#4280c7" }}>
-        <Navlink link="/app/home"> Home </Navlink>
-      </MenuItem>
-      <MenuItem style={{ backgroundColor: "#4280c7" }}>
-        <Navlink link="/app/profile"> Profile </Navlink>
-      </MenuItem>
-      <MenuItem style={{ backgroundColor: "#4280c7" }}>
-        <Navlink link="/app/courses"> Courses </Navlink>
-      </MenuItem>
-      <MenuItem style={{ backgroundColor: "#4280c7" }}>
-        <Navlink link="/app/about"> About Us </Navlink>
-      </MenuItem>
-      {/* <MenuItem
-        onClick={handleProfileMenuOpen}
-        style={{ backgroundColor: "#0071F2" }}
-      >
-        <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem> */}
-      <MenuItem style={{ backgroundColor: "#4280c7" }}>
-        <Navlink link="/app/settings"> Settings </Navlink>
-      </MenuItem>
+      {isAuthenticated ? (
+        <>          
+          <MenuItem style={{ backgroundColor: "#4280c7" }}>
+            <Navlink link="/app/settings"> Settings </Navlink>
+          </MenuItem>
+          <MenuItem style={{ backgroundColor: "#4280c7" }}>
+            <Navlink link="/app/about"> Logout </Navlink>
+          </MenuItem>
+        </>
+      ) : (
+        <>
+          <MenuItem style={{ backgroundColor: "#4280c7" }}>
+            <Navlink link="/app/courses"> Courses </Navlink>
+          </MenuItem>
+          <MenuItem style={{ backgroundColor: "#4280c7" }}>
+            <Navlink link="/app/about"> About Us </Navlink>
+          </MenuItem>
+          <MenuItem style={{ backgroundColor: "#4280c7" }}>
+            <Navlink link="/signin"> Signin </Navlink>
+          </MenuItem>
+          <MenuItem style={{ backgroundColor: "#4280c7" }}>
+            <Navlink link="/signup"> Signup </Navlink>
+          </MenuItem>
+        </>
+      )}
     </Menu>
   );
-
 
   return (
     <div className={`${classes.grow} ${cssClasses.appbar}`}>
@@ -231,26 +234,38 @@ export default function PrimarySearchAppBar() {
             <Navlink link="/app/trending">Trending</Navlink>
             <Navlink link="/app/courses">Courses</Navlink>
             <Navlink link="/app/about">About Us</Navlink>
-            <Navlink link="/app/home">
-              <HomeIcon />
-            </Navlink>
-            <Navlink link="/app/search">
-              <SearchIcon />
-            </Navlink>
 
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+            {isAuthenticated ? (
+              <>
+                <Navlink link={isAuthenticated ? "/app/home" : "/signin"}>
+                  <HomeIcon />
+                </Navlink>
+                <Navlink link="/app/search">
+                  <SearchIcon />
+                </Navlink>
+                <IconButton
+                  edge="end"
+                  aria-label="account of current user"
+                  aria-controls={menuId}
+                  aria-haspopup="true"
+                  onClick={handleProfileMenuOpen}
+                  color="inherit"
+                >
+                  <AccountCircle />
+                </IconButton>
+              </>
+            ) : (
+              <>
+                <Navlink link="/signin">
+                  <button className={cssClasses.signinbtn}>Signin</button>
+                </Navlink>
+                <Navlink link="/signup">
+                  <button className={cssClasses.signupbtn}>Signup</button>
+                </Navlink>
+              </>
+            )}
           </div>
           <div className={classes.sectionMobile}>
-            
             <IconButton
               aria-label="show more"
               aria-controls={mobileMenuId}

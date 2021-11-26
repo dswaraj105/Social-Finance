@@ -21,3 +21,10 @@
   align-items: center;
   justify-content: space-around;
 }
+
+@media (max-width: 800px) {
+  .container {
+    bottom: 50px;
+    right: 10px;
+  }
+}

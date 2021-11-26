@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
     border: "2px solid #fff",
-    "& > *": {
-      margin: theme.spacing(2),
-      width: theme.spacing(25),
-      height: theme.spacing(7),
-    },
+    // "& > *": {
+    //   margin: theme.spacing(2),
+    //   width: theme.spacing(25),
+    //   height: theme.spacing(7),
+    // },
   },
 }));
 

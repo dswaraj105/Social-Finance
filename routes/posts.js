@@ -1,6 +1,7 @@
 const express = require('express');
 
 const postController = require('../controllers/posts');
+const jwtHandler = require("../controllers/jwtHandler");
 
 const router = express.Router();
 

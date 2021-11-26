@@ -1,6 +1,7 @@
 import { Fragment } from "react";
 
 import MenuAppBar from '../MenuAppBar/MenuAppBar';
+import BottomNav from "../BottomNav/BottomNav";
 
 const Layout = (props) => {
     return <Fragment>
@@ -8,6 +9,7 @@ const Layout = (props) => {
         <main>
             {props.children}
         </main>
+        <BottomNav />
     </Fragment>
 }
 

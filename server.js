@@ -7,6 +7,7 @@ const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 const multer = require("multer");
+const cookieParser = require("cookie-parser");
 
 const PORT = process.env.PORT || 5000;
 
@@ -53,6 +54,8 @@ app.use('/images',express.static('images'));
 app.use(express.json({ limit: "1mb" }));
 // using multer to parse nultipart form data
 app.use(multer({storage: fileStorage, fileFilter: fileFilter}).single("image"));
+// cookie-parser midleware 
+app.use(cookieParser());
 
 // User Track
 // req.user
@@ -65,6 +68,7 @@ const likePostRoutes = require('./routes/likePosts');
 const commentRoutes = require('./routes/comments');
 const profileRoutes = require('./routes/profile');
 const statsRoutes = require('./routes/companyStats');
+const contactusRoutes = require('./routes/contactUs');
 
 app.use(loginRoutes);
 app.use(postRoutes);
@@ -73,15 +77,14 @@ app.use(likePostRoutes);
 app.use(commentRoutes);
 app.use(profileRoutes);
 app.use(statsRoutes);
+app.use(contactusRoutes);
 
-app.get('/getreport', (req,res,next) => {
-  console.log('Sending pdf');
-  res.end();
-})
 
 app.get("*", (req, res, next) => {
-  res.sendFile(__dirname,"./index.html");
+  res.sendFile(path.join(__dirname , "client", "build",'index.html'));
 });
+
+
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static('client/build'));

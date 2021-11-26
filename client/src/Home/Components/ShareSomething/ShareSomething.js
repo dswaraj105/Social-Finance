@@ -25,7 +25,7 @@ const ShareSomething = () => {
                 </Link>
             </div>
             <div className={classes.bottom}>
-                Share Your Todays Taughts on Financial Market
+                Share Your Todays Taughts on Finance
             </div>
         </Paper>
     );

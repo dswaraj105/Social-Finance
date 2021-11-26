@@ -64,7 +64,7 @@ const Signup = () => {
   const submitFormHandler = (e) => {
     e.preventDefault();
 
-    // MAking every state touched
+    // Making every state touched
     nameBlurHandler();
     emailBlurHandler();
     passwordBlurHandler();
@@ -123,8 +123,6 @@ const Signup = () => {
       setErrorMessage("Confirm the privacy Policy");
     }
 
-    // Yet to handle front end for incorrect inputs
-    console.log("Something is wrong");
     setError(true);
     setErrorMessage("Please fill all the inputs");
   };
@@ -132,6 +130,29 @@ const Signup = () => {
   const closeErrorHandler = () => {
     setError(false);
   };
+
+  // Setting up errors for incorrect inputs
+  let emailErrorMsg = "";
+  let nameErrorMsg = "";
+  let passwordErrorMsg = "";
+  let reEnteredPasswordErrorMsg = "";
+
+  if(emailError){
+    emailErrorMsg = "Please enter a valid email";
+  }
+
+  if(nameError){
+    nameErrorMsg = "Please enter a name to represent you";
+  }
+
+  if(passwordHasError) {
+    passwordErrorMsg = "Password has to be at least 7 characters";
+  }
+
+  if(reEnteredPasswordError){
+    reEnteredPasswordErrorMsg = "Password didn't match";
+  }
+
 
   return (
     <div className={cssClasses.signin}>
@@ -159,6 +180,7 @@ const Signup = () => {
               onChange={nameChangreHandler}
               onBlur={nameBlurHandler}
               error={nameError}
+              helperText={nameErrorMsg}
               required
             />
             <TextField
@@ -171,7 +193,7 @@ const Signup = () => {
               onChange={emailChangeHandler}
               onBlur={emailBlurHandler}
               error={emailError}
-              required
+              helperText={emailErrorMsg}
             />
             <TextField
               name="password"
@@ -184,6 +206,7 @@ const Signup = () => {
               onChange={passwordChangeHandler}
               onBlur={passwordBlurHandler}
               error={passwordHasError}
+              helperText={passwordErrorMsg}
               required
             />
             <TextField
@@ -197,6 +220,7 @@ const Signup = () => {
               onChange={reENteredPasswordChangeHandler}
               onBlur={reEnteredPasswordBlurHandler}
               error={reEnteredPasswordError}
+              helperText={reEnteredPasswordErrorMsg}
               required
             />
             <FormControl component="fieldset">
@@ -219,7 +243,7 @@ const Signup = () => {
             <button className={cssClasses.signinbtn}>Sign Up</button>
             <NavLink to="/signin" style={{ textDecoration: "none" }}>
               <p className={cssClasses.change}>
-                Already have an account?{" "}
+                Already have an account?
                 <span className={cssClasses.bold}>Sign In</span>
               </p>
             </NavLink>

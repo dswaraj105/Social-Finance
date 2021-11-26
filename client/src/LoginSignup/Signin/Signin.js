@@ -118,7 +118,7 @@ const Signin = () => {
             history.push("/app/home");
           }
           if (res.msg) {
-            console.log("Directing to login for", res.msg);
+            // console.log("Directing to login for", res.msg);
             // history.replace(`/loginsignup/login/${res.msg}`);
             setError(true);
             setErrorMessage(res.msg);
@@ -141,6 +141,13 @@ const Signin = () => {
   const closeErrorHandler = () => {
     setError(false);
   };
+
+
+  // Setting up errors for incorrect inputs
+  let emailErrorMsg = "";
+  if(emailError){
+    emailErrorMsg = "Please enter a valid email";
+  }
 
   return (
     <div className={cssClasses.signin}>
@@ -167,6 +174,7 @@ const Signin = () => {
               onChange={emailChangeHandler}
               onBlur={emailBlurHandler}
               error={emailError}
+              helperText={emailErrorMsg}
             />
             <FormControl
               className={clsx(classes.margin, classes.textField)}
@@ -178,8 +186,6 @@ const Signin = () => {
               <OutlinedInput
                 id="outlined-adornment-password"
                 type={values.showPassword ? "text" : "password"}
-                // value={values.password}
-                // onChange={handleChange("password")}
                 value={enteredPassword}
                 onChange={passwordChanged}
                 error={passwordHasError}

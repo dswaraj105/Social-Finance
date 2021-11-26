@@ -52,6 +52,9 @@ exports.getAllFollowersPost = async (req, res, next) => {
   // getting the persons email from the params
   const userId = req.params.userid;
 
+  // console.log("Userid from cookie - jwt");
+  // console.log(req.locals.userid);
+
   try {
     // Getting the ids of people user follows
     const user = await User.findById(userId, "following");
