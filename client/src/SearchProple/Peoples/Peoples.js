@@ -29,7 +29,7 @@ const People = (props) => {
   };
 
   return (
-    <Paper className={cssClasses.People} elevation={3}>
+    <Paper className={cssClasses.People} elevation={3}> 
       <span>{props.name}</span>
       <Button
         style={{ color: following ? "#ae2b2b" : "#2BAE66" }}

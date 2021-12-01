@@ -7,7 +7,7 @@ const UserStateProvider = (props) => {
   const [userData, setUserData] = useState(null);
 
   const loginHandler = (user) => {
-    console.log("Loggin User [User State Provider]");
+    
     setIsAuthenticated(true);
     setUserData(user);
   };

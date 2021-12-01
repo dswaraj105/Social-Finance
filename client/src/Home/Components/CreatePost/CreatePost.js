@@ -88,7 +88,8 @@ const CreatePost = () => {
     } catch(err) {
       console.log(err);
     }
-    history.replace('/app/home');
+    // history.replace('/app/home');
+    history.push('app/profile');
   };
 
   return (

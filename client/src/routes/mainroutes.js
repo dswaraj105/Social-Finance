@@ -16,7 +16,7 @@ const Settings = React.lazy(() => import("../pages/Settings"));
 
 const MainRoutes = () => {
   let userCTX = useContext(userState);
-  console.log("main routes -- isloggedin - ", userCTX.isAuthenticated);
+  // console.log("main routes -- isloggedin - ", userCTX.isAuthenticated);
   const isloggedin = userCTX.isAuthenticated;
 
   return (
