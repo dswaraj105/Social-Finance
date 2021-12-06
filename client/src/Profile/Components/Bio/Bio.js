@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
 
 const Bio = (props) => {
   const classes = useStyles();
-  const [bio, setBio] = useState(props.bio);
   const [newBio, setNewBio] = useState("");
   const [showForm, setShowForm] = useState(false);
   const userCTX = useContext(UserState);
@@ -44,8 +43,7 @@ const Bio = (props) => {
         .then((res) => res.json())
         .then((res) => {
           if (res.msg === "OK") {
-            setBio(newBio);
-            userCTX.user.bio = newBio;
+            props.updateBio(newBio);
           }
           togglrFormHandler();
         })
@@ -66,7 +64,7 @@ const Bio = (props) => {
       <p style={{ fontSize: "1rem", textAlign: "left" }}>
         Email : {props.email}
       </p>
-      <p style={{ fontSize: "1rem" }}>{bio ? bio : "ADD YOUR BIO"}</p>
+      <p style={{ fontSize: "1rem" }}>{props.bio ? props.bio : "ADD YOUR BIO"}</p>
       {showForm && (
         <form
           className={cssClassses.form}

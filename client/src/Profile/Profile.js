@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
@@ -9,9 +9,9 @@ import Container from "@material-ui/core/Container";
 import Bio from "./Components/Bio/Bio";
 import Buddies from "./Components/Buddies";
 import Topics from "./Components/Topics";
-import Posts from './Containers/Posts/Posts';
-import jerry from "../static/images/user.jpg"
-import UserState from '../store/user-state';
+import Posts from "./Containers/Posts/Posts";
+import jerry from "../static/images/user.jpg";
+import UserState from "../store/user-state";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,18 +25,36 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Profile() {
+
+  const [bio, setBio] = useState("");
+  const [follower, setFollower] = useState(0);
+  const [following, setFollowing] = useState(0);
+
   const classes = useStyles();
   const userCTX = useContext(UserState);
   const user = userCTX.user;
+
+  useEffect(() => {
+    fetch(`/userDetails/${user._id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+        setFollower(data.followers.length);
+        setFollowing(data.following.length);
+        setBio(data.bio);
+      })
+      .catch((err) => console.log(err));
+  });
 
   return (
     <Container>
       <Grid container spacing={3}>
         <Grid item xs>
-          <Bio 
-            name={user? user.name : ""}
-            email={user? user.email : ""}
-            bio={user? user.bio: ""}
+          <Bio
+            name={user ? user.name : ""}
+            email={user ? user.email : ""}
+            bio={bio}
+            updateBio={(text) => setBio(text)}
           />
         </Grid>
         <Grid
@@ -72,7 +90,8 @@ export default function Profile() {
                     backgroundColor: "#FCF6F5",
                   }}
                 >
-                  <h4>Followers</h4>{user? user.followers.length: 0}
+                  <h4>Followers</h4>
+                  {follower}
                 </Paper>
               </Grid>
               <Grid item xs>
@@ -84,7 +103,8 @@ export default function Profile() {
                     backgroundColor: "#FCF6F5",
                   }}
                 >
-                  <h4>Following</h4>{user ? user.following.length: 0}
+                  <h4>Following</h4>
+                  {following}
                 </Paper>
               </Grid>
             </Grid>
@@ -105,7 +125,7 @@ export default function Profile() {
           </Paper>
         </Grid>
         <Grid item sm={8} xs={12}>
-            <Posts />
+          <Posts />
         </Grid>
       </Grid>
     </Container>

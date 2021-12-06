@@ -7,6 +7,7 @@ import OurVision from "./Sections/OurVision/OurVision";
 import OurServices from "./Sections/OurServices/OurServices";
 import ContactUs from "./Sections/ContactUs/Contactus";
 import Footer from './Sections/Footer/Footer';
+import Feedback from "./Sections/Feedback/Feedback";
 
 // import cssClasses from "./LandingPage.module.css";
 
@@ -20,6 +21,7 @@ const LandingPage = () => {
       <OurServices />
       <ContactUs />
       <Footer />
+      <Feedback />
     </Fragment>
   );
 };

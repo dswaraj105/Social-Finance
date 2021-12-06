@@ -4,13 +4,13 @@ import Post from "../../Components/Post/Post";
 import userState from "../../../store/user-state";
 import { Divider, Paper } from "@material-ui/core";
 
-const Posts = () => {
+const Posts = (props) => {
   const userCTX = useContext(userState);
   const [posts, setPosts] = useState([]);
   const [isPostsEmpty, setIsPostsEmpty] = useState(false);
 
   useEffect(() => {
-    let userId = localStorage.getItem("searchid");
+    let userId = props.userid;
 
     console.log(userId);
     fetch(`/usersAllPost/${userId}`)

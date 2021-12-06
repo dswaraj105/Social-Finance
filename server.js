@@ -68,7 +68,7 @@ const likePostRoutes = require('./routes/likePosts');
 const commentRoutes = require('./routes/comments');
 const profileRoutes = require('./routes/profile');
 const statsRoutes = require('./routes/companyStats');
-const contactusRoutes = require('./routes/contactUs');
+const otherRoutes = require('./routes/other');
 
 app.use(loginRoutes);
 app.use(postRoutes);
@@ -77,7 +77,7 @@ app.use(likePostRoutes);
 app.use(commentRoutes);
 app.use(profileRoutes);
 app.use(statsRoutes);
-app.use(contactusRoutes);
+app.use(otherRoutes);
 
 
 app.get("*", (req, res, next) => {

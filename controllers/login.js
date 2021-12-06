@@ -38,9 +38,16 @@ exports.postLogin = async (req, res, next) => {
         
         // adding jwt in cookie
         res.cookie('jwt', token, {httpOnly : true, maxAge : 1000 * 24 * 60 * 60 * 7 });
+
+        const userDetails = {
+          name: user.name,
+          email: user.email,
+          _id: user._id
+        };
+        console.log("sending user details", userDetails);
         
         // Sending response if everything goes OK
-        res.status(200).json(user);
+        res.status(200).json(userDetails);
         return;
       } else {
         // Password didn't match

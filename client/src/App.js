@@ -1,5 +1,5 @@
 import React, { Suspense, useContext, useEffect } from "react";
-import { Route, Switch, useHistory } from "react-router-dom";
+import { Route, Switch, useHistory, useLocation } from "react-router-dom";
 
 import PageNotFound from "./pages/PageNotFound";
 import Layout from "./components/Layout/Layout";
@@ -10,23 +10,25 @@ import LandingPage from "./pages/LandingPage";
 import Signin from "./LoginSignup/Signin/Signin";
 import Signup from "./LoginSignup/Signup/Signup";
 import userState from "./store/user-state";
+import FeedBack from "./Feedback/Feedback";
 
 function App() {
-
   const userCTX = useContext(userState);
   const history = useHistory();
+  const location = useLocation();
 
   useEffect(() => {
-    const uemail = localStorage.getItem('useremail');
-    const uid = localStorage.getItem('userID');
-    const uname = localStorage.getItem('username');
-    if(!uname || !uid || ! uemail){
+    const uemail = localStorage.getItem("useremail");
+    const uid = localStorage.getItem("userID");
+    const uname = localStorage.getItem("username");
+    if (!uname || !uid || !uemail) {
       return;
     }
-    userCTX.onLogin({name: uname, email: uemail, _id: uid});
-    history.push('/app/home');
+    userCTX.onLogin({ name: uname, email: uemail, _id: uid });
+    
+    history.push(location.pathname);
     // console.log("Logging in the user");
-  },[]);
+  }, []);
 
   return (
     <Suspense
@@ -52,6 +54,9 @@ function App() {
           <Layout>
             <MainRoutes />
           </Layout>
+        </Route>
+        <Route path="/feedback">
+          <FeedBack />
         </Route>
         <Route path="*">
           <PageNotFound />

@@ -1,0 +1,11 @@
+.Feedback {
+  background-color: #68C2FF;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.Paper {
+  /* margin: 10px; */
+  margin: 20px 10px;
+  padding: 10px 10px;
+}

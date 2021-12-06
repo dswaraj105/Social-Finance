@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 
+import Details from "./Components/Details/details";
 import Posts from "./Containers/Posts/Posts";
 import jerry from "../static/images/user.jpg";
 import UserState from "../store/user-state";
@@ -30,17 +31,33 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Profile() {
+  const [bio, setBio] = useState("");
+  const [followers, setFollowers] = useState(0);
+  const [following, setFollowing] = useState(0);
+  const [isfollowing, setIsFollowing] = useState(false);
+
   const classes = useStyles();
   const userCTX = useContext(UserState);
   const user = userCTX.user;
   const params = useParams();
-  const [following, setFollowing] = useState(
-    user.following.includes(params.userid)
-  );
   localStorage.setItem("searchid", params.userid);
 
-  const followBtnClickHandler = () => {
+  useEffect(() => {
+    fetch(`/userDetails/${user._id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setFollowers(data.followers.length);
+        setFollowing(data.following.length);
+        setBio(data.bio);
+        if (data.followers.includes(user._id)) {
+          setIsFollowing(true);
+        }
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
+  const followBtnClickHandler = () => {
     fetch("/addfollowing", {
       method: "POST",
       headers: {
@@ -49,14 +66,9 @@ export default function Profile() {
       body: JSON.stringify({ userId: user._id, follow: params.userid }),
     })
       .then((res) => res.json())
-      .then((res) =>{
-        if(res.msg === "Done"){
-          if(following){
-            user.following = user.following.filter(i => i !== params.userid);
-          } else {
-            user.following.push(params.userid);
-          }
-          setFollowing((prevState) => !prevState);
+      .then((res) => {
+        if (res.msg === "Done") {
+          setIsFollowing((prevState) => !prevState);
         }
       })
       .catch((err) => console.log(err));
@@ -84,12 +96,17 @@ export default function Profile() {
               className={classes.button}
               onClick={followBtnClickHandler}
             >
-              { following ? 'UnFollow': 'Follow'}
+              {!isfollowing ? "UnFollow" : "Follow"}
             </Button>
           </div>
+          <Details
+            followers={followers}
+            following={following}
+            bio={bio}
+          />
         </Grid>
         <Grid item sm={8} xs={12}>
-          <Posts />
+          <Posts userid={params.userid} />
         </Grid>
       </Grid>
     </Container>

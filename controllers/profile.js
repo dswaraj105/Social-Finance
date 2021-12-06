@@ -12,8 +12,19 @@ exports.getUserDetails = async (req, res, next) => {
     // Getting all the user details
     const userDetails = await User.findById(userId);
 
+    const sendUserData = {
+      name: userDetails.name,
+      email: userDetails.email,
+      _id: userDetails._id,
+      bio: userDetails.bio,
+      following: userDetails.following,
+      followers: userDetails.followers
+    }
+
+    const sendDetails = {};
+
     // Sending a success response
-    res.status(201).json(userDetails);
+    res.status(201).json(sendUserData);
   } catch (err) {
     console.log(err);
     res.status(501).json({msg: "Server error", err: err});
