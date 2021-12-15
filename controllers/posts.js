@@ -94,8 +94,10 @@ exports.getAllFollowersPost = async (req, res, next) => {
         .populate({ path: "postedBy", select: ["name", "imageUrl"] })
         .limit(100);
     }
+
     // Sending a success message with all the posts
     res.status(201).json({ posts: posts, following: following.length});
+    
   } catch (err) {
     console.log(err);
     // Sending an error response if we have an errro

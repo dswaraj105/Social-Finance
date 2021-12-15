@@ -1,15 +1,35 @@
 import NewsCard from "./NewsCard/NewsCard";
 
-import img1 from '../../../static/images/news1.PNG';
-import img2 from '../../../static/images/crypto.PNG';
-import img3 from '../../../static/images/china.PNG';
-import img4 from '../../../static/images/game.PNG';
+import img1 from "./Images/news1.png";
+import img2 from "./Images/news2.png";
+import img3 from "./Images/news3.png";
+import img4 from "./Images/news4.png";
 
 const NEWS_LIST = [
-  { image: img1, title: "Morgan Stanley says these 6 stocks are much cheaper alternatives to Big Tech", link: "https://www.cnbc.com/2021/06/28/morgan-stanley-says-these-stocks-are-cheaper-alternatives-to-big-tech.html" },
-  { image: img2, title: "Cramer: Here’s why I bought back into ether instead of bitcoin when crypto stabilized last week", link: "https://www.cnbc.com/2021/06/28/why-jim-cramer-bought-ether-instead-of-bitcoin-when-crypto-stabilized-.html" },
-  { image: img3, title: "JPMorgan picks its favorite Chinese stocks on everything from hydrogen to EV batteries", link: "https://www.cnbc.com/2021/06/27/jpmorgan-picks-its-favorite-chinese-stocks-on-everything-from-hydrogen-to-ev-batteries.html" },
-  { image: img4, title: "Baird suspends GameStop stock coverage, citing continued Reddit influence and lack of company plan", link: "https://www.cnbc.com/2021/06/28/baird-suspends-gamestop-stock-coverage-reddit-influence-lack-of-plan.html" },
+  {
+    image: img2,
+    title: "Forex reserves fall $4.5 Billion in two weeks",
+    link: "https://economictimes.indiatimes.com/news/economy/finance/forex-reserves-fall-4-5-billion-in-two-weeks/articleshow/88210084.cms",
+  },
+  {
+    image: img1,
+    title:
+      "Stocks in the news: Star Health, Patym, Infosys, IIFL, Finance and Deepak Financers",
+    link: "https://economictimes.indiatimes.com/markets/stocks/news/stocks-in-the-news-star-health-paytm-infosys-iifl-finance-and-deepak-fertilisers/articleshow/88197318.cms",
+  },
+
+  {
+    image: img3,
+    title:
+      "Center inks two loan pacts of Rs 2,074 crore with Asian Development Bank",
+    link: "https://economictimes.indiatimes.com/news/economy/finance/centre-inks-two-loan-pacts-of-rs-2074-crore-with-asian-development-bank/articleshow/88148224.cms",
+  },
+  {
+    image: img4,
+    title:
+      "Cryptocurrency regulation needs collective efforts, says Finance Minister Sitharaman",
+    link: "https://economictimes.indiatimes.com/news/economy/finance/cryptocurrency-regulation-needs-collective-efforts-says-finance-minister-sitharaman/articleshow/88083836.cms",
+  },
 ];
 
 const MarketNews = () => {

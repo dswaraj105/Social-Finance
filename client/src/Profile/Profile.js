@@ -38,7 +38,7 @@ export default function Profile() {
     fetch(`/userDetails/${user._id}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        // console.log(data);
         setFollower(data.followers.length);
         setFollowing(data.following.length);
         setBio(data.bio);

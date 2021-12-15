@@ -10,7 +10,6 @@
 .card {
     position: absolute;
     width: 500px;
-    
 }
 
 .header{
@@ -55,4 +54,10 @@
     padding: 20px;
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 600px) {
+    .card{
+        width: 100%;
+    }
 }

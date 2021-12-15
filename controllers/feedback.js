@@ -3,25 +3,19 @@ const Feedback = require("../models/feedback");
 
 exports.recordFeedback =async (req, res, next) => {
   const platform = req.body.platform;
-  const bestFeature = req.body.bestFeature;
   const featureRecomendation = req.body.featureRecomendation;
-  const badFeature = req.body.badFeature;
   const removeFeature = req.body.removeFeature;
   const message = req.body.message;
   
-  console.log("feedback recod");
-  console.log(platform);
-  console.log(bestFeature);
-  console.log(featureRecomendation);
-  console.log(badFeature);
-  console.log(removeFeature);
-  console.log(message);
-  console.log("==================");
+  // console.log("feedback recod");
+  // console.log(platform);
+  // console.log(featureRecomendation);
+  // console.log(removeFeature);
+  // console.log(message);
+  // console.log("==================");
   const data = {
     platform,
-    bestFeature,
     featureRecomendation,
-    badFeature,
     removeFeature,
     message
   }

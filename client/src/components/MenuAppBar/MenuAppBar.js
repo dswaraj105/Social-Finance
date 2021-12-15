@@ -182,8 +182,8 @@ export default function PrimarySearchAppBar() {
           <MenuItem style={{ backgroundColor: "#4280c7" }}>
             <Navlink link="/app/settings"> Settings </Navlink>
           </MenuItem>
-          <MenuItem style={{ backgroundColor: "#4280c7" }}>
-            <Navlink link="/app/about"> Logout </Navlink>
+          <MenuItem className={cssClasses.logoutMobile} onClick={logoutHandler} style={{ backgroundColor: "#4280c7" }}>
+            Logout
           </MenuItem>
         </>
       ) : (

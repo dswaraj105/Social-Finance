@@ -20,7 +20,7 @@ import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 
 import UserState from "../../../store/user-state";
 import Comments from "./Comments/Comments";
-import cssClasss from "./Post.module.css";
+import cssClasses from "./Post.module.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,17 +58,19 @@ export default function Post(props) {
     setExpanded(!expanded);
   };
 
-  const displayTopics = props.topics.map((topic, index) => {
+  
+  const topics = props.topics[0].split(',');
+  const displayTopics = topics.map((topic, index) => {
     return (
-      <Typography
+      <span
         key={index}
         variant="h6"
         component="p"
-        style={{ color: "#2BAE66" }}
+        className={cssClasses.topic}
         gutterBottom
       >
-        #{topic}
-      </Typography>
+        #{topic} &nbsp;
+      </span>
     );
   });
 
@@ -77,7 +79,7 @@ export default function Post(props) {
 
   let likedClasses = "";
   if (liked) {
-    likedClasses = cssClasss.red;
+    likedClasses = cssClasses.red;
   }
 
   const likePostHandler = () => {
@@ -165,7 +167,7 @@ export default function Post(props) {
         </CardContent>
         {props.imgUrl && (
           <img
-            className={cssClasss.postImage}
+            className={cssClasses.postImage}
             src={`/${props.imgUrl}`}
             alt="Post upload"
           />

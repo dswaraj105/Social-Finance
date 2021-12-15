@@ -45,6 +45,15 @@
   text-align: center;
 }
 
+.logoutMobile {
+    text-decoration: none;
+    color:white;
+    height: 15px;
+    padding: 0 auto;
+    font-size: 1.5rem;
+    padding-left: 30px;
+}
+
 .signinbtn {
   background-color: #fff;
   color: #000;

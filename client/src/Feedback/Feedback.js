@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import { Button, Container, Paper, Typography } from "@material-ui/core";
 import Radio from "@material-ui/core/Radio";
@@ -12,22 +13,13 @@ import cssClasses from "./Feedback.module.css";
 
 const FeedBack = () => {
   const [value1, setValue1] = useState();
-  const [value2, setValue2] = useState();
-  const [value3, setValue3] = useState();
   const [value4, setValue4] = useState();
   const [suggesation1, setSuggesation1] = useState();
   const [suggesation2, setSuggesation2] = useState();
+  const history = useHistory();
 
   const handleChange1 = (event) => {
     setValue1(event.target.value);
-  };
-
-  const handleChange2 = (event) => {
-    setValue2(event.target.value);
-  };
-
-  const handleChange3 = (event) => {
-    setValue3(event.target.value);
   };
 
   const handleChange4 = (event) => {
@@ -47,9 +39,7 @@ const FeedBack = () => {
 
     const data = {
       platform: value1,
-      bestFeature: value2,
       featureRecomendation: suggesation1,
-      badFeature: value3,
       removeFeature: suggesation2,
       message: value4,
     };
@@ -61,7 +51,11 @@ const FeedBack = () => {
         "Content-Type": "application/json",
       },
     })
-      .then((res) => console.log(res))
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        history.push("/");
+      })
       .catch((err) => {
         console.log(err);
       });
@@ -75,13 +69,14 @@ const FeedBack = () => {
         </Typography>
         <form noValidate autoComplete="off" onSubmit={formSubmitHandler}>
           <Paper elevation={2} className={cssClasses.Paper}>
+            <p className={cssClasses.label}>
+              1. Would you use a platform which connects financial service
+              providers in a filtered way to you along with Social media feature
+              in it? Think of zomato, but for finance industry &#38; LinkedIn
+              but for finance industry merged into one.
+            </p>
             <FormControl component="fieldset">
-              <FormLabel component="legend">
-                1. Would you use a platform which connects financial service
-                providers in a filtered way to you along with Social media
-                feature in it? Think of zomato, but for finance industry &#38;
-                LinkedIn but for finance industry merged into one.
-              </FormLabel>
+              <FormLabel component="legend"></FormLabel>
               <RadioGroup
                 aria-label="gender"
                 name="gender1"
@@ -96,33 +91,7 @@ const FeedBack = () => {
           </Paper>
 
           <Paper elevation={2} className={cssClasses.Paper}>
-            <FormControl component="fieldset">
-              <FormLabel component="legend">
-                2. What features of this product you like the best?
-              </FormLabel>
-              <RadioGroup
-                aria-label="good"
-                name="good"
-                value={value2}
-                onChange={handleChange2}
-              >
-                <FormControlLabel
-                  value="Social Media"
-                  control={<Radio />}
-                  label="Social Media"
-                />
-                <FormControlLabel
-                  value="Courses"
-                  control={<Radio />}
-                  label="Courses"
-                />
-                <FormControlLabel
-                  value="Trending"
-                  control={<Radio />}
-                  label="Trending"
-                />
-              </RadioGroup>
-            </FormControl>
+            <p className={cssClasses.label} >2. What features of this product you like the best?</p>
             <TextField
               fullWidth
               id="outlined-basic"
@@ -134,39 +103,10 @@ const FeedBack = () => {
           </Paper>
 
           <Paper elevation={2} className={cssClasses.Paper}>
-            <FormControl component="fieldset">
-              <FormLabel component="legend">
-                3. What do you think is the bad thing in this product and needs
-                to be eliminated?
-              </FormLabel>
-              <RadioGroup
-                aria-label="bad"
-                name="bad"
-                value={value3}
-                onChange={handleChange3}
-              >
-                <FormControlLabel
-                  value="Social Media"
-                  control={<Radio />}
-                  label="Social Media"
-                />
-                <FormControlLabel
-                  value="Courses"
-                  control={<Radio />}
-                  label="Courses"
-                />
-                <FormControlLabel
-                  value="Trending"
-                  control={<Radio />}
-                  label="Trending"
-                />
-                <FormControlLabel
-                  value="none"
-                  control={<Radio />}
-                  label="All Good"
-                />
-              </RadioGroup>
-            </FormControl>
+            <p className={cssClasses.label}>
+              3. What do you think is the bad thing in this product and needs to
+              be eliminated?
+            </p>
             <TextField
               fullWidth
               id="outlined-basic"
@@ -178,27 +118,29 @@ const FeedBack = () => {
           </Paper>
 
           <Paper elevation={2} className={cssClasses.Paper}>
-            <label for="comments">
+            <p className={cssClasses.label}>
               4. What more improvements do you think we should do to make it
               better product?
-            </label>
+            </p>
             <TextField
               fullWidth
-              id="commnets"
+              id="outlined-basic"
               label="Any Comments"
               variant="outlined"
               value={value4}
               onChange={handleChange4}
             />
           </Paper>
+          <div className={cssClasses.submitBtn}>
           <Button
             type="submit"
-            variant="outlined"
-            color="primary"
-            style={{ width: "100%", maxWidth: "500px" }}
+            variant="contained"
+            color="secondary"
+            style={{width: "150px"}}
           >
             Submit
           </Button>
+          </div>
         </form>
       </Container>
     </div>

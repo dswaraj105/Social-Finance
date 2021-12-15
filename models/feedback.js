@@ -5,13 +5,7 @@ const feedbackSchema = new mongoose.Schema({
   platform: {
     type: String,
   },
-  bestFeature: {
-    type: String,
-  },
   featureRecomendation: {
-    type: String,
-  },
-  badFeature: {
     type: String,
   },
   removeFeature: {
