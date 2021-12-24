@@ -23,13 +23,13 @@ export default function FloatingActionButtons() {
   const classes = useStyles();
 
   return (
-    <Link to="/feedback">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSddNJ58qnswSa7nd3WOaYzlhCRBmqjRVNsKhbe9cDLD7-GA6A/viewform" target="_blank">
       <div className={classes.root}>
         <Fab variant="extended" color="secondary">
-          <NavigationIcon className={classes.extendedIcon} />
-          Leave Us a FeedBack
+            <NavigationIcon className={classes.extendedIcon} />
+            Leave Us A Feedback
         </Fab>
       </div>
-    </Link>
+    </a>
   );
 }
