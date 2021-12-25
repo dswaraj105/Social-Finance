@@ -47,6 +47,7 @@ export default function Profile() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        console.log(data.name);
         setFollowers(data.followers.length);
         setFollowing(data.following.length);
         setBio(data.bio);

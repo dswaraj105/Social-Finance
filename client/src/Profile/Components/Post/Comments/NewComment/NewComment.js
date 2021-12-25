@@ -8,7 +8,7 @@ const newComment = (props) => {
     <form className={cssClasses.from} onSubmit={props.submit} noValidate autoComplete="off">
       <TextField
         className={cssClasses.comment}
-        style={{ margin: "0 5% 10px 30px" }}
+        style={{ margin: "0 5px 10px 30px" }}
         value={props.val}
         onChange={props.change}
         id="outlined-basic"

@@ -61,7 +61,7 @@ const CreatePost = () => {
 
     //Checking for postData - cant be empty
     if (postData.trim() === "") {
-      history.replace('/app/home');
+      // history.replace('/app/home');
       return;
     }
 

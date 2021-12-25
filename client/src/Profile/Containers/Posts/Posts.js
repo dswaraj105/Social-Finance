@@ -2,6 +2,7 @@ import { useState, useEffect, useContext, Fragment } from "react";
 import { Link } from "react-router-dom";
 
 import Post from "../../Components/Post/Post";
+// import Post from "../../../components/Post/Post";
 import userState from "../../../store/user-state";
 import { Button, Divider, Paper } from "@material-ui/core";
 

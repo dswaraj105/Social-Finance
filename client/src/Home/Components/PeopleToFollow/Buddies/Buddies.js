@@ -21,23 +21,23 @@ export default function Buddies() {
     <div className={classes.root}>
       <List component="nav">
         <ListItem button>
-          <Link style={{textDecoration: "none"}} to="/app/peoplesprofile/60dff5dbce1019852cd0b295">
+          <Link style={{textDecoration: "none"}} to="/app/peoplesprofile/61c2e254a0d9770016f0952e">
             <ListItemText primary="Swaraj Das" />
           </Link>
         </ListItem>
         <ListItem button>
-          <Link style={{textDecoration: "none"}} to="/app/peoplesprofile/60df27bb5210aa4e68209644">
-            <ListItemText primary="Yash Agarwal" />
-          </Link>
-        </ListItem>
-        <ListItem button>
-          <Link style={{textDecoration: "none"}} to="/app/peoplesprofile/60e1f439fecdc463d8d003bb">
+          <Link style={{textDecoration: "none"}} to="/app/peoplesprofile/61c2e506dbaea7301c9145d1">
             <ListItemText primary="Taral Sharma" />
           </Link>
         </ListItem>
         <ListItem button>
-          <Link style={{textDecoration: "none"}} to="/app/peoplesprofile/60df112c5210aa4e6820963d">
-            <ListItemText primary="Vijiyant Prateek" />
+          <Link style={{textDecoration: "none"}} to="/app/peoplesprofile/61c2e94fdbaea7301c9145d4">
+            <ListItemText primary="Ayush Jaiswal" />
+          </Link>
+        </ListItem>
+        <ListItem button>
+          <Link style={{textDecoration: "none"}} to="/app/peoplesprofile/61c2ebe0c23f2c60d4e24e06">
+            <ListItemText primary="Prabhat Reddy" />
           </Link>
         </ListItem>
       </List>

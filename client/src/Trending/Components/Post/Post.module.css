@@ -5,5 +5,11 @@
 }
 
 .red {
-  color: #086cdf;
+  color: #4280c7;
+}
+
+.topic {
+  color: #2BAE66;
+  font-weight: bold;
+  font-size: 1.2rem;
 }

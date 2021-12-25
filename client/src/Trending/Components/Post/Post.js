@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";  
 
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
@@ -19,11 +20,11 @@ import QuestionAnswerIcon from "@material-ui/icons/QuestionAnswer";
 
 import UserState from "../../../store/user-state";
 import Comments from "./Comments/Comments";
-import cssClasss from "./Post.module.css";
+import cssClasses from "./Post.module.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: 650,
+    maxWidth: 600,
     marginBottom: 15,
   },
   media: {
@@ -45,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function RecipeReviewCard(props) {
+export default function Post(props) {
   const [expanded, setExpanded] = useState(false);
   const [liked, setLiked] = useState(props.liked);
   const [likesCount, setLikesCount] = useState(props.likesCount);
@@ -57,17 +58,19 @@ export default function RecipeReviewCard(props) {
     setExpanded(!expanded);
   };
 
-  const displayTopics = props.topics.map((topic, index) => {
+  
+  const topics = props.topics[0].split(',');
+  const displayTopics = topics.map((topic, index) => {
     return (
-      <Typography
+      <span
         key={index}
         variant="h6"
         component="p"
-        style={{ color: "#2BAE66" }}
+        className={cssClasses.topic}
         gutterBottom
       >
-        #{topic}
-      </Typography>
+        #{topic} &nbsp;
+      </span>
     );
   });
 
@@ -76,7 +79,7 @@ export default function RecipeReviewCard(props) {
 
   let likedClasses = "";
   if (liked) {
-    likedClasses = cssClasss.red;
+    likedClasses = cssClasses.red;
   }
 
   const likePostHandler = () => {
@@ -142,8 +145,10 @@ export default function RecipeReviewCard(props) {
   
 
   return (
-    <Paper className={classes.root} style={{margin: "auto"}} elevation={3}>
+    <Paper elevation={3} className={classes.root}>
+      
       <Card className={classes.root}>
+        <Link to={`/app/peoplesprofile/${props.postUserId}`} style={{textDecoration: 'none'}}>
         <CardHeader
           avatar={
             <Avatar aria-label="recipe" className={classes.avatar}>
@@ -153,6 +158,7 @@ export default function RecipeReviewCard(props) {
           title={props.owner}
           subheader={date}
         />
+        </Link>
         <CardContent>
           <Typography variant="body2" component="p">
             {props.text}
@@ -161,7 +167,7 @@ export default function RecipeReviewCard(props) {
         </CardContent>
         {props.imgUrl && (
           <img
-            className={cssClasss.postImage}
+            className={cssClasses.postImage}
             src={`/${props.imgUrl}`}
             alt="Post upload"
           />
